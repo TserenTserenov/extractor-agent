@@ -14,11 +14,11 @@ Knowledge Extractor — ИИ-система, которая трансформи
 
 | Процесс | Статус |
 |---------|--------|
-| Session-Close Extraction | Спроектирован |
-| On-Demand Extraction | Спроектирован |
-| Bulk Extraction | Спроектирован |
-| Cross-Repo Sync | Будущее |
-| Knowledge Audit | Будущее |
+| Session-Close Extraction | Готов к тесту | `prompts/session-close.md` |
+| On-Demand Extraction | Готов к тесту | `prompts/on-demand.md` |
+| Bulk Extraction | Готов к тесту | `prompts/bulk-extraction.md` |
+| Cross-Repo Sync | Готов к тесту | `prompts/cross-repo-sync.md` |
+| Knowledge Audit | Готов к тесту | `prompts/knowledge-audit.md` |
 
 ## Правила
 
