@@ -11,14 +11,19 @@ Knowledge Extractor — ИИ-система, которая трансформи
 ## Процессы
 
 Все процессы описаны в `PROCESSES.md` этого репо.
+Полная карта триггеров и архитектура вызовов → `DP.AISYS.013` § 4.0.
 
-| Процесс | Статус |
-|---------|--------|
-| Session-Close Extraction | Готов к тесту | `prompts/session-close.md` |
-| On-Demand Extraction | Готов к тесту | `prompts/on-demand.md` |
-| Bulk Extraction | Готов к тесту | `prompts/bulk-extraction.md` |
-| Cross-Repo Sync | Готов к тесту | `prompts/cross-repo-sync.md` |
-| Knowledge Audit | Готов к тесту | `prompts/knowledge-audit.md` |
+| Процесс | Промпт | Статус |
+|---------|--------|--------|
+| Session-Close Extraction | `prompts/session-close.md` | Готов к тесту |
+| On-Demand Extraction | `prompts/on-demand.md` | Готов к тесту |
+| Bulk Extraction | `prompts/bulk-extraction.md` | Готов к тесту |
+| Cross-Repo Sync | `prompts/cross-repo-sync.md` | Готов к тесту |
+| Knowledge Audit | `prompts/knowledge-audit.md` | Готов к тесту |
+| Inbox-Check | — (описан в PROCESSES.md) | Описан |
+| Ontology Sync | `prompts/ontology-sync.md` | Готов к тесту |
+
+> **Исключение:** Мелкие правила (1-3 строки) → Claude пишет напрямую, без KE. Все остальное знание → только через KE.
 
 ## Правила
 
@@ -57,4 +62,4 @@ Knowledge Extractor — ИИ-система, которая трансформи
 
 ---
 
-*Последнее обновление: 2026-02-10*
+*Последнее обновление: 2026-02-11*
