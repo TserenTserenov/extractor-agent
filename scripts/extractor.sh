@@ -42,9 +42,7 @@ notify() {
 
 notify_telegram() {
     local scenario="$1"
-    if [ -f "$SCRIPT_DIR/notify_telegram.sh" ]; then
-        "$SCRIPT_DIR/notify_telegram.sh" "$scenario" >> "$LOG_FILE" 2>&1 || true
-    fi
+    "$HOME/Github/DS-synchronizer/scripts/notify.sh" extractor "$scenario" >> "$LOG_FILE" 2>&1 || true
 }
 
 # Загрузка переменных окружения (TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID)
