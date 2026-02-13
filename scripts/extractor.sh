@@ -90,15 +90,15 @@ $extra_args"
     log "Completed process: $command_file"
 
     # Commit + push changes (отчёты, помеченные captures)
+    # NB: Claude Code внутри run_claude может уже закоммитить — проверяем staged после add
     local strategy_dir="$HOME/Github/DS-my-strategy"
-    if ! git -C "$strategy_dir" diff --quiet HEAD 2>/dev/null || \
-       [ -n "$(git -C "$strategy_dir" ls-files --others --exclude-standard 2>/dev/null)" ]; then
-        git -C "$strategy_dir" add inbox/captures.md inbox/extraction-reports/ >> "$LOG_FILE" 2>&1
+    git -C "$strategy_dir" add inbox/captures.md inbox/extraction-reports/ >> "$LOG_FILE" 2>&1 || true
+    if ! git -C "$strategy_dir" diff --cached --quiet 2>/dev/null; then
         git -C "$strategy_dir" commit -m "inbox-check: extraction report $DATE" >> "$LOG_FILE" 2>&1 \
             && log "Committed DS-my-strategy" \
             || log "WARN: git commit failed"
     else
-        log "No changes in DS-my-strategy"
+        log "No new changes to commit in DS-my-strategy (Claude may have already committed)"
     fi
 
     if ! git -C "$strategy_dir" diff --quiet origin/main..HEAD 2>/dev/null; then
